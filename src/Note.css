@@ -61,3 +61,7 @@
 .note__delete:hover {
   transform: scale(1.1);
 }
+
+.char__progress {
+  background-color: #fff !important;
+}
