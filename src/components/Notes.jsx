@@ -9,6 +9,20 @@ const Notes = () => {
   const [notes, setNotes] = useState([]);
   const [inputText, setInputText] = useState("");
 
+  //apply the save and get functions using useEffect
+  //get the saved notes and add them to the array
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("Notes"));
+    if (data) {
+      setNotes(data);
+    }
+  }, []);
+
+  //saving data to local storage
+  useEffect(() => {
+    localStorage.setItem("Notes", JSON.stringify(notes));
+  }, [notes]);
+
   // get text and store in state
   const textHandler = (e) => {
     setInputText(e.target.value);
