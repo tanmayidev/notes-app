@@ -1,7 +1,10 @@
-import { React } from "react";
-import "../css/Note.css";
+import { React, useState } from "react";
+import "../Note.css";
 import Note from "./Note";
 function Notes() {
+  //states
+  const [notes, setNotes] = useState([]);
+  const [inputText, setInputText] = useState("");
   return (
     <div className="notes">
       <Note />
